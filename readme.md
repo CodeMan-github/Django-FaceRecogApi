@@ -1,4 +1,4 @@
-This is the project written by python Django.
+This is the project written in python Django.
 It uses Azure Face Recognition API to detect the person from image uploaded.
 
 Running on localhost
