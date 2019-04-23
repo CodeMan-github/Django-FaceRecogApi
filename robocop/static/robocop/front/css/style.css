@@ -1,0 +1,204 @@
+html,
+body {
+  height: 100%;
+}
+
+
+.bg-color-white{
+  background-color: white;
+}
+.bg-color-red{
+  background-color: #9e0b0f;
+}
+
+.font-rem-06 { font-size: 0.6rem; }
+.font-rem-07 { font-size: 0.7rem; }
+.font-rem-08 { font-size: 0.8rem; }
+.font-rem-09 { font-size: 0.9rem; }
+.font-rem-10 { font-size: 1rem; }
+.font-rem-11 { font-size: 1.1rem; }
+.font-rem-12 { font-size: 1.2rem; }
+.font-rem-13 { font-size: 1.3rem; }
+.font-rem-14 { font-size: 1.4rem; }
+.font-rem-15 { font-size: 1.5rem; }
+.font-rem-16 { font-size: 1.6rem; }
+.font-rem-17 { font-size: 1.7rem; }
+.font-rem-18 { font-size: 1.8rem; }
+.font-rem-19 { font-size: 1rem; }
+.font-rem-20 { font-size: 1rem; }
+
+.color-white { color: white; }
+.color-white:hover { color: white; }
+button.color-white:hover { text-decoration: none; }
+.color-gray { color: #DDDDDD; }
+.color-red { color: #9e0b0f; }
+
+body {
+  font-family: sans-serif;
+  background-color: #444;
+  color: white;
+}
+
+.header{
+  width: 100%;
+  height: 6rem;
+  padding-top: 0.5rem;
+  font-weight: 100;
+  color: white;
+  text-align: center;
+  line-height: 5rem;
+  font-size: 3rem;
+}
+
+.content{
+  width: 100%;
+  height: calc(100% - 6rem);
+}
+
+.content.content-signin{
+  display: flex;
+  width: 100%;
+  padding-bottom: 6rem;
+  align-items: center;
+  justify-content: center;
+
+}
+
+  .wrapper-signin {
+    min-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .wrapper-signin .input-item{
+    position: relative;
+    border-bottom: 1px solid white;
+  }
+  .wrapper-signin .input-item + .input-item{
+    padding-top: 1rem;
+  }
+  .wrapper-signin .input-item label{
+    position: absolute;
+  }
+  .wrapper-signin .input-item input{
+    width: 100%;
+    padding-left: 4rem;
+    border: 0;
+    box-shadow: none;
+    background-color: transparent;
+    outline: none;
+    color: white;
+  }
+  .wrapper-signin .input-item input:focus{
+    outline: none;
+  }
+
+
+
+  .wrapper-match{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+  }
+  .wrapper-match .panel{
+    flex: 1;
+    padding: 10px 25px;
+  }
+  .wrapper-match .panel + .panel {
+    border-left: solid 1px white;
+  }
+  .wrapper-match .panel .panel-inner{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .wrapper-match .panel .panel-header{
+    width: 100%;
+    height: 40px;
+  }
+  .wrapper-match .panel .panel-content{
+    display: block;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    width: 100%;
+    height: calc(100% - 80px);
+  }
+  .wrapper-match .panel .panel-content .file-preview{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .wrapper-match .panel .panel-content .file-preview embed,
+  .wrapper-match .panel .panel-content .file-preview img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .wrapper-match .panel .panel-footer{
+    /* width: 100%;
+    height: 40px; */
+  }
+  .wrapper-match .upload-div label{
+    cursor: pointer;
+  }
+  .wrapper-match .upload-div img,
+  .wrapper-match .upload-div span
+  {
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+  .wrapper-match .upload-div .upload-process-wrap{
+    width: 100%;
+    height: 38px;
+    padding-top: 16px;
+    line-height: 1.2rem;
+    display: none;
+  }
+  .wrapper-match .upload-div .upload-process-wrap i,
+  .wrapper-match .upload-div .upload-process-wrap span {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
+  .wrapper-match .panel-content .match-progress{
+    display: none;
+    width: 60%;
+    margin: 30% 20% 0 20%;
+    padding: 1rem;
+  }
+
+  .wrapper-match .panel-content .match-progress p{
+    margin-bottom: 0.5rem;
+  }
+  .wrapper-match .panel-content .match-progress .progress{
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .wrapper-match .panel-content .match-progress .progress-bar{
+    background-color: rgba(255, 255, 255, 1);
+  }
+
+  .wrapper-match .view-control-matchfile{
+    display: none;
+  }
+
+  .error {
+    padding: 10px 10px 10px 10px;
+  }
+
+  .matchPercent {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .cropimg {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+  }
+
+  .score_table {
+    font-size: 12px;
+  }

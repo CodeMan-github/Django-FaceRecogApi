@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt">
+
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'robocop/front/icon/favicon.ico' %}">
+    <title>Calculation Match</title>
+    <link href="{% static 'robocop/front/bootstrap4/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{% static 'robocop/front/css/style.css' %}" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="header bg-color-red text-uppercase">
+      Robocop
+    </div>
+
+    <div class="content content-match">
+
+      <div class="wrapper-match py-3 px-2">
+        <!-- File Upload Panel -->
+        <div class="panel panel-source-file">
+          <div class="panel-inner">
+            <div class="panel-header row mx-0">
+              <div class="col-6 px-0 upload-div">
+                <!-- File Upload Input -->
+                <form id="fileUploadForm" action="upload_file" method="post" enctype="multipart/form-data"> 
+                  <label for="fileInput" role="button">
+                    <img src="{% static 'robocop/front/icon/icon_upload.png' %}"> &nbsp;
+                    <span>Enviar Documento</span>
+                  </label>
+                  {% csrf_token %}
+                  <input type="file" id="fileInput" class="sr-only" name="file" accept="image/x-png,image/jpeg,application/pdf">
+                </form>
+                <div class="upload-process-wrap">
+                  <i class="fa fa-spinner fa-spin"></i>
+                  <span> Carregando... </span>
+                  <span class="process-value"></span>
+                </div>
+                <div class="uploadError" style="display:none;"></div>
+              </div>
+              <div class="col-6 px-0 text-right">
+                <button type="button" class="btn btn-sm text-uppercase color-red btn-find-match" onclick="findMatch('{{ match_url }}')"
+                  disabled>
+                  BUSCAR Equivalente
+                </button>
+              </div>
+            </div>
+            <div class="panel-content">
+              <div class="uploadError" style="display: none;"></div>
+              <div class="file-preview"></div>
+            </div>
+            <div class="panel-footer">
+            </div>
+          </div>
+        </div>
+
+        <!-- Match Panel -->
+        <div class="panel panel-match-file">
+          <div class="panel-inner">
+            <div class="panel-header row mx-0">
+              <div class="col-12 text-center text-uppercase text-bold">
+                Equivalente Encontado
+              </div>
+            </div>
+            <div class="panel-content">
+              <div class="match-progress bg-color-red">
+                <p class="text-center text-bold font-rem-11">Buscando Equivalente...</p>
+                <p class="match-progress-value text-center font-rem-12">85%</p>
+                <div class="progress">
+                  <div class="progress-bar">
+                  </div>
+                </div>
+              </div>
+              <div class="file-preview" style="display: none;">
+              </div>
+              <div class="matchFindError" style="display: none;"></div>
+            </div>
+            <div class="panel-footer">
+              <div class="view-control-matchfile row mx-0">
+                <div class="col-4 px-0">
+                  <button type="button" class="btn-matchfile-prev btn btn-light font-rem-09 py-1 px-2 text-uppercase"
+                    onclick="viewNextMatchFile(-1)">
+                    Anterior
+                  </button>
+                </div>
+                <div class="col-4 px-0 div-matchfile-page text-center">
+                </div>
+                <div class="col-4 px-0 text-right">
+                  <button type="button" class="btn-matchfile-next btn btn-light font-rem-09 py-1 px-2 text-uppercase"
+                    onclick="viewNextMatchFile(1)">
+                    Próximo
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Third Panel -->
+        <div class="panel panel-match-result">
+          <div class="panel-inner">
+            <div class="panel-header row mx-0">
+              <div class="col-12 text-center text-uppercase text-bold">
+                Documento <span id="accuracy"></span> Equivalente
+              </div>
+            </div>
+            <div class="panel-content">
+              <div class="row img-preview">
+              </div>
+            </div>
+            <div class="panel-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <script src="{% static 'robocop/front/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'robocop/front/bootstrap4/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'robocop/front/js/script.js' %}"></script>
+  </body>
+</html>

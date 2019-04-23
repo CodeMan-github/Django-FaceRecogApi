@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'robocop/front/icon/favicon.ico' %}">
+    <title>Login</title>
+    <link href="{% static 'robocop/front/bootstrap4/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{% static 'robocop/front/css/style.css' %}" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="header bg-color-red text-uppercase">
+      Robocop
+    </div>
+
+    <div class="content content-signin">
+
+      <div class="wrapper-signin">
+        <div class="part-signin px-4 pt-4 pb-2 bg-color-red">
+          <form class="px-2 py-3" method="POST">
+            {% csrf_token %}
+            <div class="error text-center">
+              O e-mail ou senha são inválidos.
+            </div>
+            <div class="input-item text-left">
+              <label for="{{ form.email.id_for_label }}">E-mail:</label>
+              {{ form.email }}
+            </div>
+            <div class="input-item text-left">
+              <label for="{{ form.password.id_for_label }}">Senha:</label>
+              {{ form.password }}
+            </div>
+            <div class="row">
+              <div class="col-12 text-right pt-3 font-rem-08">
+                Esqueci a minha Senha
+              </div>
+              <div class="col-12 text-center pt-4">
+                <button type="submit" class="btn btn-link text-uppercase font-rem-11 color-white">Entrar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="row text-center color-gray">
+          <div class="col-12 pt-4 font-rem-08">
+            Não possui uma conta?
+          </div>
+          <div class="col-12 text-bold pt-2 font-rem-12">
+            Registre-se
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="{% static 'robocop/front/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'robocop/front/bootstrap4/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'robocop/front/js/script.js' %}"></script>
+  </body>
+</html>

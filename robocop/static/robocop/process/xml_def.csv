@@ -1,0 +1,20 @@
+﻿Def,Tag
+Last Name,Text3
+Other Name,Text1
+Male,Check Box18
+Female,Check Box19
+Date,Text2
+Month,Text4
+Year,Text5
+National Id,Text6
+Place of Birth - Town,Text7
+Social Security Number,Text8
+Place of Birth - District,Text9
+Student ID,Text10
+Name of Bank,Text11
+Branch,Text13
+Accnt Number,Text12
+Account Name,Text14
+University,Text15
+Year of Admission,Text16
+Programme of Study,Text17
